@@ -22,7 +22,7 @@ Algoritm
 - function with parameter string of type string
 - set finalString = ""
 - loop from 0 through string length -1
-  - if !a < string[i] < z
+  - if !a <= string[i] <= z
     - if finalString[i - 1] === " "
       - continue
     finalString += " "
