@@ -23,7 +23,7 @@ function cleanUp(text) {
   for (let idx = 0; idx < text.length; idx += 1) {
     if (
       (text[idx] >= "a" && text[idx] <= "z") ||
-      (text[idx] >= "A" && text[idx] <= "A") ||
+      (text[idx] >= "A" && text[idx] <= "Z") ||
       (text[idx] >= "0" && text[idx] <= "9")
     ) {
       cleanText += text[idx];
