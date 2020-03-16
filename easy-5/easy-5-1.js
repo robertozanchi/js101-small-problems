@@ -48,7 +48,7 @@ function padZero(number) {
   }
 }
 
-function angleInRange(angle) {
+function convertAngle(angle) {
   if (angle >= 360) {
     return angle % 360;
   } else if (angle < 0) {
@@ -62,16 +62,13 @@ function angleInRange(angle) {
 }
 
 function dms(value) {
-  value = angleInRange(value);
+  value = convertAngle(value);
 
-  if (value === 0) {
-    return "0\xB000'00\"";
-  } else {
-    let degrees = Math.floor(value);
-    let minutes = Math.floor(splitDegrees(value));
-    let seconds = Math.floor(splitDegrees(splitDegrees(value)));
-    return `${degrees}\xB0${padZero(minutes)}'${padZero(seconds)}"`;
-  }
+  let degrees = Math.floor(value);
+  let minutes = Math.floor(splitDegrees(value));
+  let seconds = Math.floor(splitDegrees(splitDegrees(value)));
+
+  return `${degrees}\xB0${padZero(minutes)}'${padZero(seconds)}"`;
 }
 
 console.log(dms(30)); // 30°00'00"
