@@ -10,6 +10,10 @@
 - Return hours and minutes as string HH:MM
 */
 
+const MINUTES_PER_HOUR = 60;
+const HOURS_PER_DAY = 24;
+const MINUTES_PER_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR;
+
 function padZero(number) {
   if (number.toString().length == 1) {
     return "0" + number;
@@ -19,14 +23,14 @@ function padZero(number) {
 }
 
 function timeOfDay(minutes) {
-  let singleDay = minutes % 1440;
-  let hours = Math.floor(singleDay / 60);
+  let singleDay = minutes % MINUTES_PER_DAY;
+  let hours = Math.floor(singleDay / MINUTES_PER_HOUR);
   if (hours < 0) {
-    hours = 24 + hours;
+    hours = HOURS_PER_DAY + hours;
   }
-  let mins = singleDay % 60;
+  let mins = singleDay % MINUTES_PER_HOUR;
   if (mins < 0) {
-    mins = 60 + mins;
+    mins = MINUTES_PER_HOUR + mins;
   }
   return `${padZero(hours)}:${padZero(mins)}`;
 }
