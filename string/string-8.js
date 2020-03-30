@@ -4,9 +4,7 @@ function wordLengths(string) {
   if (arguments.length === 0 || string.length == 0) {
     return [];
   } else {
-    return string.split(" ").map(word => {
-      return word + " " + String(word.length);
-    });
+    return string.split(" ").map(word => word + " " + String(word.length));
   }
 }
 
