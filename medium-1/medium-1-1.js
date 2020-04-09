@@ -22,19 +22,28 @@ Algorithm
 */
 
 function rotateArray(array) {
-  if (!Array.isArray(array)) {
-    return undefined;
-  } else {
-    if (array.length === 0) {
-      return [];
-    } else {
-      let results = array.slice();
-      let firstElement = results.shift();
-      results.push(firstElement);
-      return results;
-    }
-  }
+  if (!Array.isArray(array)) return undefined;
+
+  if (array.length === 0) return [];
+
+  let results = array.slice();
+  let firstElement = results.shift();
+  results.push(firstElement);
+  return results;
 }
+
+// // LS solution
+// function rotateArray(array) {
+//   if (!Array.isArray(array)) {
+//     return undefined;
+//   }
+
+//   if (array.length === 0) {
+//     return [];
+//   }
+
+//   return array.slice(1).concat(array[0]);
+// }
 
 console.log(rotateArray([7, 3, 5, 2, 9, 1])); // [3, 5, 2, 9, 1, 7]
 console.log(rotateArray(["a", "b", "c"])); // ["b", "c", "a"]
