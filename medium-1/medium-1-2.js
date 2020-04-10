@@ -12,15 +12,8 @@ Algorithm
 - return string converted to number
 */
 
-function rotateArray(array) {
-  if (!Array.isArray(array)) return undefined;
-
-  if (array.length === 0) return [];
-
-  let results = array.slice();
-  let firstElement = results.shift();
-  results.push(firstElement);
-  return results;
+function rotateString(string) {
+  return string.slice(1) + string[0];
 }
 
 function rotateRightmostDigits(digits, count) {
@@ -29,8 +22,8 @@ function rotateRightmostDigits(digits, count) {
     string.slice(0, string.length - count),
     string.slice(string.length - count),
   ];
-  right = rotateArray(right.split("")).join("");
-  return Number(left.concat("", right));
+
+  return Number(left + rotateString(right));
 }
 
 console.log(rotateRightmostDigits(735291, 1)); // 735291
