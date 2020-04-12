@@ -12,11 +12,10 @@
 */
 
 function letterPercentages(letters) {
-  let chars = letters.split("");
   let uppercaseCount = 0;
   let lowercaseCount = 0;
   let otherCount = 0;
-  chars.forEach((char) => {
+  letters.split("").forEach((char) => {
     if (char.match(/[A-Z]/)) {
       uppercaseCount += 1;
     } else if (char.match(/[a-z]/)) {
