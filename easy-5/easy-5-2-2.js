@@ -1,4 +1,5 @@
 // 2 Combining Arrays
+// May 16, 2020
 
 /*
 For the union() function
