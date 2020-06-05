@@ -11,11 +11,11 @@
 
 let triangle = function (a, b, c) {
   let sides = [...arguments].sort((a, b) => a - b);
-  if (sides[0] + sides[1] < sides[2] || a * b * c === 0) {
+  if (sides[0] + sides[1] < sides[2] || sides[0] === 0) {
     return "invalid";
   }
 
-  if (a === b && b === c && a === c) return "equilateral";
+  if (a === b && b === c) return "equilateral";
   if (a === b || b === c || a === c) return "isosceles";
   return "scalene";
 };
