@@ -82,3 +82,12 @@ function greetPeople() {
 
 greetPeople();
 console.log(greetingMessage); // raises ReferenceError
+
+function test(a, b) {
+  console.log(a + b);
+  return "bla";
+}
+('He said, "Hi there!"');
+('He said, "Hi there!"');
+let f = 'He said, "Hi there!"';
+('He said, "Hi there!"');
